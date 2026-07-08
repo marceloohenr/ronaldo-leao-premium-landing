@@ -1,5 +1,12 @@
-import { Placeholder } from "./Placeholder";
+import { EditorialImage } from "./ImageFallbacks";
 import { Reveal } from "./motion-primitives";
+
+const galleryItems = [
+  "Consulta com escuta e estratégia",
+  "Plano alimentar para sua rotina",
+  "Acompanhamento de evolução",
+  "Nutrição funcional e estética",
+];
 
 export function Gallery() {
   return (
@@ -18,9 +25,9 @@ export function Gallery() {
         </div>
 
         <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <Reveal key={i} delay={i * 0.06}>
-              <Placeholder label="Foto do atendimento" aspect="aspect-[3/4]" />
+          {galleryItems.map((item, i) => (
+            <Reveal key={item} delay={i * 0.06}>
+              <EditorialImage title={item} aspect="aspect-[3/4]" />
             </Reveal>
           ))}
         </div>

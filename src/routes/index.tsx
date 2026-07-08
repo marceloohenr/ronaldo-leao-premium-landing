@@ -6,12 +6,12 @@ import { About } from "@/components/landing/About";
 import { Specialties } from "@/components/landing/Specialties";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Differentiators } from "@/components/landing/Differentiators";
-import { Results } from "@/components/landing/Results";
 import { Gallery } from "@/components/landing/Gallery";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
+import { FloatingWhatsAppButton } from "@/components/landing/FloatingWhatsAppButton";
 import { WHATSAPP_DISPLAY, INSTAGRAM_URL } from "@/lib/constants";
 
 export const Route = createFileRoute("/")({
@@ -69,13 +69,13 @@ function Index() {
         <Specialties />
         <HowItWorks />
         <Differentiators />
-        <Results />
         <Gallery />
         <Testimonials />
         <Faq />
         <FinalCta />
       </main>
       <Footer />
+      <FloatingWhatsAppButton />
     </div>
   );
 }

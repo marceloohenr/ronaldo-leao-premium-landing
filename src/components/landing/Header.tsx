@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/ronaldo-logo.jpg.asset.json";
-import { BRAND_NAME, BRAND_TAGLINE } from "@/lib/constants";
+import { RONALDO_LOGO } from "@/lib/assets";
+import { BRAND_NAME } from "@/lib/constants";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +13,7 @@ const nav = [
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
@@ -29,21 +30,17 @@ export function Header() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-6 px-6 lg:h-20 lg:px-10">
-        <a href="#top" className="flex items-center gap-3">
+      <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-4 px-6 lg:h-20 lg:px-10">
+        <a
+          href="#top"
+          className="flex min-w-0 items-center"
+          aria-label={`${BRAND_NAME} - início`}
+        >
           <img
-            src={logoAsset.url}
-            alt="Logotipo Ronaldo Leão"
-            className="h-9 w-9 rounded-full object-cover ring-1 ring-border lg:h-10 lg:w-10"
+            src={RONALDO_LOGO}
+            alt="Ronaldo Leão Nutrição e Bem-estar"
+            className="h-10 w-[154px] object-contain object-left sm:h-12 sm:w-[210px]"
           />
-          <div className="hidden flex-col leading-tight sm:flex">
-            <span className="font-serif text-[15px] tracking-[0.14em] text-foreground">
-              {BRAND_NAME.toUpperCase()}
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
-              {BRAND_TAGLINE}
-            </span>
-          </div>
         </a>
 
         <nav className="hidden items-center gap-9 md:flex">

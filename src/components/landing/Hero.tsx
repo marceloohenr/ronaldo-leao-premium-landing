@@ -1,11 +1,14 @@
-import ronaldoLight from "@/assets/ronaldo-light.jpg.asset.json";
+import {
+  RONALDO_LOGO,
+  RONALDO_PORTRAIT_ARMS,
+  RONALDO_PORTRAIT_CLOSE,
+} from "@/lib/assets";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Reveal } from "./motion-primitives";
 
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-28 lg:pt-36">
-      {/* Ambient wash */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(60%_60%_at_50%_0%,color-mix(in_oklab,var(--primary)_5%,transparent),transparent_70%)]" />
 
       <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-14 px-6 pb-24 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-10 lg:pb-32">
@@ -30,7 +33,7 @@ export function Hero() {
           <Reveal delay={0.15}>
             <p className="mt-7 max-w-[520px] text-[16px] leading-relaxed text-muted-foreground lg:text-[17px]">
               Acompanhamento nutricional focado em emagrecimento, nutrição
-              funcional, esportiva e estética — para quem busca resultados reais
+              funcional, esportiva e estética, para quem busca resultados reais
               e duradouros.
             </p>
           </Reveal>
@@ -62,21 +65,39 @@ export function Hero() {
         </div>
 
         <Reveal dir="right" delay={0.1} className="relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px]">
-            {/* Gold frame */}
-            <div className="absolute -inset-3 rounded-[2px] border border-[color:var(--gold)]/40" />
-            <div className="absolute -bottom-4 -right-4 h-24 w-24 border-b border-r border-[color:var(--gold)]/60" />
-            <img
-              src={ronaldoLight.url}
-              alt="Retrato de Ronaldo Leão, nutricionista"
-              className="relative h-full w-full rounded-[2px] object-cover grayscale-[15%]"
-              loading="eager"
-              decoding="async"
-            />
-            {/* CRN badge */}
-            <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-full border border-border bg-background/90 px-5 py-2.5 backdrop-blur-sm shadow-[0_20px_40px_-25px_rgba(0,0,0,0.25)]">
+          <div className="relative mx-auto w-full max-w-[560px] pb-16 sm:pb-20">
+            <div className="relative ml-auto aspect-[4/5] w-[86%] overflow-hidden rounded-[2px] border border-[color:var(--gold)]/35 bg-[oklch(0.955_0.012_95)] shadow-[0_32px_80px_-45px_rgba(0,0,0,0.55)] sm:w-[82%]">
+              <img
+                src={RONALDO_PORTRAIT_CLOSE}
+                alt="Retrato de Ronaldo Leão, nutricionista"
+                className="h-full w-full object-cover object-[52%_42%]"
+                loading="eager"
+                decoding="async"
+              />
+              <div className="pointer-events-none absolute inset-3 border border-[color:var(--gold)]/25" />
+            </div>
+
+            <div className="absolute bottom-0 left-0 w-[46%] overflow-hidden rounded-[2px] border border-background bg-background shadow-[0_24px_55px_-30px_rgba(0,0,0,0.5)] sm:w-[42%]">
+              <img
+                src={RONALDO_PORTRAIT_ARMS}
+                alt="Ronaldo Leão em retrato preto e branco"
+                className="aspect-[4/5] w-full object-cover object-[52%_38%]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div className="absolute right-4 top-4 hidden rounded-full border border-border/80 bg-background/90 px-4 py-2 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.45)] backdrop-blur-sm sm:block">
+              <img
+                src={RONALDO_LOGO}
+                alt="Ronaldo Leão Nutrição e Bem-estar"
+                className="h-8 w-36 object-contain"
+              />
+            </div>
+
+            <div className="absolute bottom-8 right-5 flex items-center gap-3 rounded-full border border-border bg-background/95 px-4 py-2.5 shadow-[0_20px_40px_-25px_rgba(0,0,0,0.25)] backdrop-blur-sm sm:bottom-10 sm:right-8 sm:px-5">
               <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--gold)]" />
-              <span className="text-[11px] uppercase tracking-[0.24em] text-foreground">
+              <span className="text-[10px] uppercase tracking-[0.22em] text-foreground sm:text-[11px] sm:tracking-[0.24em]">
                 CRN · Nutricionista
               </span>
             </div>

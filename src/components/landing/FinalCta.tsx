@@ -1,17 +1,13 @@
-import ronaldoDark from "@/assets/ronaldo-dark.jpg.asset.json";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Reveal } from "./motion-primitives";
 
 export function FinalCta() {
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
-        <img
-          src={ronaldoDark.url}
-          alt=""
-          aria-hidden
-          className="h-full w-full object-cover"
-        />
+      <div className="pointer-events-none absolute inset-0 opacity-25">
+        <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[color:var(--gold)]/30" />
+        <div className="absolute left-[12%] top-[18%] h-px w-[76%] bg-[color:var(--gold)]/25" />
+        <div className="absolute bottom-[18%] left-[18%] h-px w-[64%] bg-[color:var(--gold)]/20" />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_50%,transparent,var(--primary)_75%)]" />
 
