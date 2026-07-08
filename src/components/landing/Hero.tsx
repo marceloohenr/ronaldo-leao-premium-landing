@@ -41,9 +41,6 @@ export function Hero() {
           <Reveal delay={0.25}>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <WhatsAppButton size="lg">Agendar Consulta</WhatsAppButton>
-              <WhatsAppButton size="lg" variant="ghost">
-                Falar pelo WhatsApp
-              </WhatsAppButton>
             </div>
           </Reveal>
 
@@ -87,11 +84,11 @@ export function Hero() {
               />
             </div>
 
-            <div className="absolute right-4 top-4 hidden rounded-full border border-border/80 bg-background/90 px-4 py-2 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.45)] backdrop-blur-sm sm:block">
+            <div className="absolute right-3 top-3 hidden sm:block">
               <img
                 src={RONALDO_LOGO}
                 alt="Ronaldo Leão Nutrição e Bem-estar"
-                className="h-12 w-auto object-contain"
+                className="h-20 w-auto object-contain drop-shadow-[0_14px_24px_rgba(0,0,0,0.16)]"
               />
             </div>
 

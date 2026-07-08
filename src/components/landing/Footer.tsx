@@ -18,7 +18,7 @@ export function Footer() {
             <img
               src={RONALDO_LOGO}
               alt="Ronaldo Leão Nutrição e Bem-estar"
-              className="h-28 w-auto max-w-full object-contain object-left"
+              className="h-32 w-auto max-w-full object-contain object-left"
             />
             <p className="mt-6 max-w-sm text-[14px] leading-relaxed text-muted-foreground">
               Nutrição personalizada, escuta atenta e ciência aplicada, para

@@ -39,7 +39,7 @@ export function Header() {
           <img
             src={RONALDO_LOGO}
             alt="Ronaldo Leão Nutrição e Bem-estar"
-            className="h-12 w-auto object-contain object-left sm:h-14"
+            className="h-14 w-auto object-contain object-left sm:h-16"
           />
         </a>
 
