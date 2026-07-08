@@ -1,24 +1,81 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/landing/Header";
+import { Hero } from "@/components/landing/Hero";
+import { Stats } from "@/components/landing/Stats";
+import { About } from "@/components/landing/About";
+import { Specialties } from "@/components/landing/Specialties";
+import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Differentiators } from "@/components/landing/Differentiators";
+import { Results } from "@/components/landing/Results";
+import { Gallery } from "@/components/landing/Gallery";
+import { Testimonials } from "@/components/landing/Testimonials";
+import { Faq } from "@/components/landing/Faq";
+import { FinalCta } from "@/components/landing/FinalCta";
+import { Footer } from "@/components/landing/Footer";
+import { WHATSAPP_DISPLAY, INSTAGRAM_URL } from "@/lib/constants";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Ronaldo Leão — Nutricionista | Emagrecimento, Funcional, Esportiva e Estética" },
+      {
+        name: "description",
+        content:
+          "Nutricionista Ronaldo Leão — consultas personalizadas em emagrecimento, nutrição funcional, esportiva e estética. Agende pelo WhatsApp.",
+      },
+      { property: "og:title", content: "Ronaldo Leão — Nutrição e Bem-estar" },
+      {
+        property: "og:description",
+        content:
+          "Acompanhamento nutricional premium, personalizado e humanizado.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Nutritionist",
+          name: "Ronaldo Leão",
+          description:
+            "Nutricionista especializado em emagrecimento, nutrição funcional, esportiva e estética.",
+          telephone: `+55${WHATSAPP_DISPLAY.replace(/\D/g, "")}`,
+          areaServed: "Recife, PE, Brasil",
+          sameAs: [INSTAGRAM_URL],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Recife",
+            addressRegion: "PE",
+            addressCountry: "BR",
+          },
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      <Header />
+      <main>
+        <Hero />
+        <Stats />
+        <About />
+        <Specialties />
+        <HowItWorks />
+        <Differentiators />
+        <Results />
+        <Gallery />
+        <Testimonials />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }
