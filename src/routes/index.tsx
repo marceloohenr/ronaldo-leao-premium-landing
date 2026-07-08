@@ -12,28 +12,48 @@ import { Faq } from "@/components/landing/Faq";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
 import { FloatingWhatsAppButton } from "@/components/landing/FloatingWhatsAppButton";
-import { WHATSAPP_DISPLAY, INSTAGRAM_URL } from "@/lib/constants";
+import {
+  INSTAGRAM_URL,
+  SITE_DESCRIPTION,
+  SITE_IMAGE,
+  SITE_TITLE,
+  SITE_URL,
+  WHATSAPP_DISPLAY,
+} from "@/lib/constants";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Ronaldo Leão — Nutricionista | Emagrecimento, Funcional, Esportiva e Estética" },
+      { title: "Ronaldo Leão – Nutricionista | Emagrecimento, Funcional, Esportiva e Estética" },
       {
         name: "description",
         content:
-          "Nutricionista Ronaldo Leão — consultas personalizadas em emagrecimento, nutrição funcional, esportiva e estética. Agende pelo WhatsApp.",
+          "Nutricionista Ronaldo Leão: consultas personalizadas em emagrecimento, nutrição funcional, esportiva e estética. Agende pelo WhatsApp.",
       },
-      { property: "og:title", content: "Ronaldo Leão — Nutrição e Bem-estar" },
-      {
-        property: "og:description",
-        content:
-          "Acompanhamento nutricional premium, personalizado e humanizado.",
-      },
+      { property: "og:title", content: SITE_TITLE },
+      { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:site_name", content: SITE_TITLE },
+      { property: "og:image", content: SITE_IMAGE },
+      { property: "og:image:secure_url", content: SITE_IMAGE },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Logo Ronaldo Leão Nutrição e Bem-estar",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: SITE_TITLE },
+      { name: "twitter:description", content: SITE_DESCRIPTION },
+      { name: "twitter:image", content: SITE_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: SITE_URL },
+      { rel: "icon", type: "image/png", href: "/ronaldo/logo-ronaldo-leao-transparent.png" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -41,6 +61,8 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Nutritionist",
           name: "Ronaldo Leão",
+          url: SITE_URL,
+          image: SITE_IMAGE,
           description:
             "Nutricionista especializado em emagrecimento, nutrição funcional, esportiva e estética.",
           telephone: `+55${WHATSAPP_DISPLAY.replace(/\D/g, "")}`,
