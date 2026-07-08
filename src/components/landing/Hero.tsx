@@ -91,7 +91,7 @@ export function Hero() {
               <img
                 src={RONALDO_LOGO}
                 alt="Ronaldo Leão Nutrição e Bem-estar"
-                className="h-8 w-36 object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
 
