@@ -2,7 +2,7 @@ export const SITE_URL = "https://ronaldoleao-nutri.vercel.app";
 export const SITE_TITLE = "Ronaldo Leão – Nutrição e Bem-estar";
 export const SITE_DESCRIPTION =
   "Acompanhamento nutricional premium, personalizado e humanizado.";
-export const SITE_IMAGE = `${SITE_URL}/ronaldo/whatsapp-preview.png`;
+export const SITE_IMAGE = `${SITE_URL}/ronaldo/whatsapp-preview-v3.png`;
 
 export const WHATSAPP_URL =
   "https://wa.me/5581988244393?text=Ol%C3%A1%20Ronaldo!%20Gostaria%20de%20agendar%20uma%20consulta.";

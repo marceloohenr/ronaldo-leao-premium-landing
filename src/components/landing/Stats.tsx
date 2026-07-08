@@ -18,6 +18,7 @@ const stats = [
     value: null,
     display: "Sob medida",
     label: "Atendimento individual",
+    compact: true,
   },
 ];
 
@@ -97,14 +98,20 @@ export function Stats() {
       ref={sectionRef}
       className="border-y border-border/70 bg-[oklch(0.955_0.012_95)]"
     >
-      <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-y-10 px-6 py-14 sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-border/70 md:py-20 lg:px-10">
+      <div className="mx-auto grid max-w-[1240px] grid-cols-3 divide-x divide-border/70 px-4 py-10 sm:px-6 sm:py-14 md:py-20 lg:px-10">
         {stats.map((s, i) => (
           <Reveal
             key={s.label}
             delay={i * 0.08}
-            className="text-center sm:px-5 lg:px-8"
+            className="text-center px-2 sm:px-5 lg:px-8"
           >
-            <div className="min-h-[56px] font-serif text-[42px] leading-none tracking-tight text-primary sm:text-5xl lg:text-6xl">
+            <div
+              className={
+                s.compact
+                  ? "flex min-h-[42px] items-center justify-center font-serif text-[25px] leading-none tracking-tight text-primary min-[390px]:text-[28px] sm:min-h-[56px] sm:text-5xl lg:text-6xl"
+                  : "flex min-h-[42px] items-center justify-center font-serif text-[32px] leading-none tracking-tight text-primary sm:min-h-[56px] sm:text-5xl lg:text-6xl"
+              }
+            >
               <AnimatedValue
                 active={active}
                 value={s.value}
@@ -113,7 +120,7 @@ export function Stats() {
                 display={s.display}
               />
             </div>
-            <div className="mt-4 text-[10px] uppercase tracking-[0.22em] text-muted-foreground sm:text-[11px] sm:tracking-[0.28em]">
+            <div className="mt-3 text-[8px] uppercase leading-relaxed tracking-[0.16em] text-muted-foreground min-[390px]:text-[9px] sm:mt-4 sm:text-[11px] sm:tracking-[0.28em]">
               {s.label}
             </div>
           </Reveal>

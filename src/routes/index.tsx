@@ -39,8 +39,8 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: SITE_IMAGE },
       { property: "og:image:secure_url", content: SITE_IMAGE },
       { property: "og:image:type", content: "image/png" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
+      { property: "og:image:width", content: "600" },
+      { property: "og:image:height", content: "600" },
       {
         property: "og:image:alt",
         content: "Logo Ronaldo Leão Nutrição e Bem-estar",
