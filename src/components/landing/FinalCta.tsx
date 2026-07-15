@@ -1,3 +1,4 @@
+import { BRAND_NAME } from "@/lib/constants";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Reveal } from "./motion-primitives";
 
@@ -26,7 +27,7 @@ export function FinalCta() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mx-auto mt-8 max-w-xl text-[16px] leading-relaxed text-primary-foreground/75 lg:text-[17px]">
-            Agende uma consulta personalizada e receba um plano alimentar
+            Agende uma consulta com {BRAND_NAME} e receba um plano alimentar
             desenvolvido exclusivamente para a sua realidade.
           </p>
         </Reveal>

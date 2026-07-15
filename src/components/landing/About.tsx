@@ -1,4 +1,5 @@
 import { RONALDO_ABOUT_OFFICE } from "@/lib/assets";
+import { BRAND_NAME } from "@/lib/constants";
 import { Reveal } from "./motion-primitives";
 import { WhatsAppButton } from "./WhatsAppButton";
 
@@ -15,13 +16,15 @@ export function About() {
             Sobre
           </span>
           <h2 className="text-balance font-serif text-[38px] leading-[1.05] tracking-[-0.02em] text-foreground sm:text-[46px] lg:text-[54px]">
-            Muito além de <em className="italic text-primary">uma dieta</em>.
+            {BRAND_NAME}, muito além de{" "}
+            <em className="italic text-primary">uma dieta</em>.
           </h2>
           <div className="mt-8 space-y-5 text-[16px] leading-relaxed text-muted-foreground lg:text-[17px]">
             <p>
-              Cada corpo tem uma história, uma rotina e um objetivo. Meu
-              trabalho começa em compreender profundamente quem você é antes de
-              qualquer recomendação alimentar.
+              No atendimento com Ronaldo Leão, cada corpo é compreendido pela
+              sua história, rotina e objetivo. O trabalho começa em entender
+              profundamente quem você é antes de qualquer recomendação
+              alimentar.
             </p>
             <p>
               A partir dessa escuta, construo planos vivos, ajustados ao seu
@@ -47,7 +50,7 @@ export function About() {
             <div className="pointer-events-none absolute inset-4 border border-[color:var(--gold)]/25" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/72 to-transparent px-7 pb-7 pt-20">
               <p className="font-serif text-[15px] italic text-primary-foreground">
-                Atendimento nutricional individualizado
+                Ronaldo Leão · atendimento nutricional individualizado
               </p>
             </div>
           </div>

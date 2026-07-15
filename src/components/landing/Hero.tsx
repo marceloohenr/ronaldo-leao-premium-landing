@@ -3,6 +3,7 @@ import {
   RONALDO_PORTRAIT_ARMS,
   RONALDO_PORTRAIT_CLOSE,
 } from "@/lib/assets";
+import { BRAND_NAME } from "@/lib/constants";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Reveal } from "./motion-primitives";
 
@@ -16,7 +17,7 @@ export function Hero() {
           <Reveal>
             <span className="mb-8 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-muted-foreground">
               <span className="h-px w-8 bg-[color:var(--gold)]/70" />
-              Nutricionista · Recife / PE
+              {BRAND_NAME} · Nutricionista · Recife / PE
             </span>
           </Reveal>
 
@@ -32,9 +33,9 @@ export function Hero() {
 
           <Reveal delay={0.15}>
             <p className="mt-7 max-w-[520px] text-[16px] leading-relaxed text-muted-foreground lg:text-[17px]">
-              Acompanhamento nutricional focado em emagrecimento, nutrição
-              funcional, esportiva e estética, para quem busca resultados reais
-              e duradouros.
+              Acompanhamento nutricional com Ronaldo Leão, focado em
+              emagrecimento, nutrição funcional, esportiva e estética, para
+              quem busca resultados reais e duradouros.
             </p>
           </Reveal>
 
