@@ -57,18 +57,18 @@ export function Differentiators() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
           {items.map((item, i) => (
             <Reveal
               key={item.title}
               delay={i * 0.05}
-              className="group rounded-[2px] border border-border/70 bg-background p-8 transition-all duration-500 hover:-translate-y-0.5 hover:border-[color:var(--gold)]/60"
+              className="group min-h-[210px] rounded-[2px] border border-border/70 bg-background p-5 transition-all duration-500 hover:-translate-y-0.5 hover:border-[color:var(--gold)]/60 sm:p-8"
             >
-              <item.icon strokeWidth={1.1} className="h-6 w-6 text-primary" />
-              <h3 className="mt-6 font-serif text-xl tracking-tight text-foreground">
+              <item.icon strokeWidth={1.1} className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
+              <h3 className="mt-5 font-serif text-[19px] leading-tight tracking-tight text-foreground sm:mt-6 sm:text-xl">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
+              <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
                 {item.desc}
               </p>
             </Reveal>

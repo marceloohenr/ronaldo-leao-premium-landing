@@ -49,26 +49,26 @@ export function Specialties() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-[2px] border border-border/70 bg-border/70 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[2px] border border-border/70 bg-border/70 lg:grid-cols-4">
           {items.map((item, i) => (
             <Reveal
               key={item.title}
               delay={i * 0.06}
-              className="group relative flex flex-col justify-between bg-background p-8 transition-colors duration-500 hover:bg-[oklch(0.97_0.012_95)] lg:p-10"
+              className="group relative flex min-h-[230px] flex-col justify-between bg-background p-5 transition-colors duration-500 hover:bg-[oklch(0.97_0.012_95)] sm:p-8 lg:min-h-[300px] lg:p-10"
             >
               <div>
                 <item.icon
                   strokeWidth={1.1}
-                  className="h-7 w-7 text-primary transition-transform duration-500 group-hover:-translate-y-0.5"
+                  className="h-6 w-6 text-primary transition-transform duration-500 group-hover:-translate-y-0.5 sm:h-7 sm:w-7"
                 />
-                <h3 className="mt-8 font-serif text-2xl tracking-tight text-foreground lg:text-[26px]">
+                <h3 className="mt-6 font-serif text-[20px] leading-tight tracking-tight text-foreground sm:mt-8 sm:text-2xl lg:text-[26px]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
                   {item.desc}
                 </p>
               </div>
-              <div className="mt-10 h-px w-6 bg-[color:var(--gold)]/60 transition-all duration-500 group-hover:w-14" />
+              <div className="mt-7 h-px w-6 bg-[color:var(--gold)]/60 transition-all duration-500 group-hover:w-14 sm:mt-10" />
             </Reveal>
           ))}
         </div>

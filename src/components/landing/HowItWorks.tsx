@@ -38,7 +38,7 @@ export function HowItWorks() {
         </Reveal>
       </div>
 
-      <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+      <div className="relative grid grid-cols-2 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {/* Connector line — desktop */}
         <div className="pointer-events-none absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-transparent via-[color:var(--gold)]/50 to-transparent lg:block" />
 
@@ -46,17 +46,17 @@ export function HowItWorks() {
           <Reveal
             key={s.n}
             delay={i * 0.08}
-            className="relative flex flex-col lg:pr-6"
+            className="relative flex min-h-[190px] flex-col lg:pr-6"
           >
             <div className="relative z-10 flex items-center gap-4">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-[color:var(--gold)]/50 bg-background font-serif text-[15px] text-primary">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[color:var(--gold)]/50 bg-background font-serif text-[14px] text-primary sm:h-12 sm:w-12 sm:text-[15px]">
                 {s.n}
               </span>
             </div>
-            <h3 className="mt-6 font-serif text-2xl tracking-tight text-foreground">
+            <h3 className="mt-5 font-serif text-[20px] leading-tight tracking-tight text-foreground sm:mt-6 sm:text-2xl">
               {s.title}
             </h3>
-            <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground sm:text-[14px]">
               {s.desc}
             </p>
           </Reveal>
