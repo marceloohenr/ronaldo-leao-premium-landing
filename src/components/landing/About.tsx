@@ -1,4 +1,4 @@
-import { RONALDO_PORTRAIT_ARMS } from "@/lib/assets";
+import { RONALDO_ABOUT_OFFICE } from "@/lib/assets";
 import { Reveal } from "./motion-primitives";
 import { WhatsAppButton } from "./WhatsAppButton";
 
@@ -38,9 +38,9 @@ export function About() {
         <Reveal dir="right">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[500px] overflow-hidden rounded-[2px] border border-border/70 bg-[oklch(0.95_0.012_95)] shadow-[0_28px_70px_-48px_rgba(0,0,0,0.5)]">
             <img
-              src={RONALDO_PORTRAIT_ARMS}
-              alt="Retrato de Ronaldo Leão"
-              className="h-full w-full object-cover object-[50%_35%]"
+              src={RONALDO_ABOUT_OFFICE}
+              alt="Ronaldo Leão em atendimento nutricional"
+              className="h-full w-full object-cover object-[50%_42%]"
               loading="lazy"
               decoding="async"
             />
