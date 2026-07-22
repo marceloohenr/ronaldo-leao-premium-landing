@@ -43,8 +43,8 @@ export function Testimonials() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="mx-auto max-w-[1240px] px-6 py-28 lg:px-10 lg:py-36">
-      <div className="mb-12 text-center">
+    <section className="mx-auto max-w-[1240px] px-5 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-36">
+      <div className="mb-9 text-center sm:mb-12">
         <Reveal>
           <span className="mb-4 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-muted-foreground">
             <span className="h-px w-8 bg-[color:var(--gold)]/70" />
@@ -57,44 +57,53 @@ export function Testimonials() {
       </div>
 
       <Reveal>
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
+        <div className="cursor-grab overflow-hidden active:cursor-grabbing" ref={emblaRef}>
+          <div className="flex items-stretch">
             {testimonials.map((testimonial, i) => (
               <div
                 key={testimonial.image}
-                className="min-w-0 flex-[0_0_100%] px-2 sm:px-4 md:flex-[0_0_88%] lg:flex-[0_0_78%]"
+                className="flex min-w-0 flex-[0_0_92%] px-2 sm:flex-[0_0_84%] sm:px-3 md:flex-[0_0_78%] lg:flex-[0_0_72%] lg:px-4"
               >
-                <figure className="relative mx-auto grid overflow-hidden rounded-[2px] border border-border/70 bg-background text-left md:grid-cols-[0.62fr_1.38fr]">
+                <figure
+                  className={`relative mx-auto flex min-h-[520px] w-full max-w-[900px] flex-col overflow-hidden rounded-[2px] border border-border/70 bg-background px-5 py-9 text-center shadow-[0_24px_70px_-55px_rgba(0,0,0,0.45)] transition-all duration-500 sm:min-h-[540px] sm:px-8 sm:py-11 md:min-h-[540px] md:px-10 md:py-12 lg:min-h-[640px] lg:px-16 lg:py-16 ${
+                    selected === i
+                      ? "scale-100 opacity-100"
+                      : "scale-[0.96] opacity-55"
+                  }`}
+                >
                   <span
                     aria-hidden
-                    className="absolute left-5 top-4 z-10 font-serif text-6xl leading-none text-[color:var(--gold)]/35 md:left-[calc(31%+2rem)] md:top-8 md:text-7xl"
+                    className="absolute left-5 top-4 z-10 font-serif text-5xl leading-none text-[color:var(--gold)]/35 md:left-8 md:top-6 md:text-6xl lg:left-10 lg:top-8 lg:text-7xl"
                   >
                     “
                   </span>
 
-                  <div className="relative flex items-center justify-center bg-[oklch(0.955_0.012_95)] px-7 py-10 md:px-10 md:py-16">
-                    <div className="relative h-48 w-48 overflow-hidden rounded-full border border-[color:var(--gold)]/45 bg-background p-1 shadow-[0_28px_70px_-45px_rgba(0,0,0,0.45)] sm:h-56 sm:w-56 lg:h-72 lg:w-72">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.imageAlt}
-                        className="h-full w-full rounded-full object-cover"
-                        style={{ objectPosition: testimonial.imagePosition }}
-                        loading={i === 0 ? "eager" : "lazy"}
-                        decoding="async"
-                      />
-                      <div className="pointer-events-none absolute inset-3 rounded-full border border-[color:var(--gold)]/25" />
-                    </div>
-                  </div>
-
-                  <div className="relative flex flex-col justify-center px-7 py-12 sm:px-9 md:px-12 md:py-16">
-                    <blockquote className="font-serif text-[18px] italic leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
+                  <div>
+                    <blockquote className="relative mx-auto max-w-3xl font-serif text-[14px] italic leading-[1.62] text-foreground sm:text-[16px] sm:leading-[1.7] md:text-[17px] lg:text-[21px] lg:leading-relaxed">
                       {testimonial.quote}
                     </blockquote>
-                    <figcaption className="mt-8 border-t border-border/70 pt-6">
-                      <span className="block font-serif text-[16px] text-foreground">
+                  </div>
+
+                  <div className="mt-5 sm:mt-6 md:mt-7 lg:mt-10">
+                    <div className="flex justify-center">
+                      <div className="relative h-28 w-28 overflow-hidden rounded-full border border-[color:var(--gold)]/45 bg-background p-1 shadow-[0_24px_55px_-38px_rgba(0,0,0,0.45)] sm:h-32 sm:w-32 md:h-36 md:w-36 lg:h-44 lg:w-44">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.imageAlt}
+                          className="h-full w-full rounded-full object-cover"
+                          style={{ objectPosition: testimonial.imagePosition }}
+                          loading={i === 0 ? "eager" : "lazy"}
+                          decoding="async"
+                        />
+                        <div className="pointer-events-none absolute inset-3 rounded-full border border-[color:var(--gold)]/25" />
+                      </div>
+                    </div>
+
+                    <figcaption className="mx-auto mt-5 max-w-sm border-t border-border/70 pt-5 sm:mt-6 sm:pt-6 lg:mt-7">
+                      <span className="block font-serif text-[15px] text-foreground sm:text-[16px]">
                         {testimonial.name}
                       </span>
-                      <span className="mt-2 block text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+                      <span className="mt-2 block text-[10px] uppercase tracking-[0.22em] text-muted-foreground sm:text-[11px] sm:tracking-[0.28em]">
                         {testimonial.role}
                       </span>
                     </figcaption>
