@@ -1,25 +1,27 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import {
+  TESTIMONIAL_RUNNER_BEACH,
+  TESTIMONIAL_RUNNER_PINK,
+} from "@/lib/assets";
 import { Reveal } from "./motion-primitives";
 
-const placeholders = [
+const testimonials = [
   {
     quote:
-      "Um espaço reservado para o depoimento de um paciente. Em breve, histórias reais de quem viveu a experiência de perto.",
-    name: "Paciente",
-    role: "Depoimento em breve",
+      "Ter o Ronaldo Leão como nutricionista fez toda a diferença para mim. Tenho alergia à proteína do leite, então minha alimentação sempre foi muito limitada. Mesmo com todas as restrições, ele montou uma dieta prática, variada e que encaixou perfeitamente na minha rotina corrida, além de escolher suplementos compatíveis com a minha condição. O resultado foi um excelente ganho de massa magra sem abrir mão da saúde. Recomendo de olhos fechados para quem procura um acompanhamento realmente personalizado.",
+    name: "Paciente em acompanhamento",
+    role: "Ganho de massa magra",
+    image: TESTIMONIAL_RUNNER_BEACH,
+    imageAlt: "Paciente correndo ao ar livre após acompanhamento nutricional",
   },
   {
     quote:
-      "Este é um bloco preparado para receber avaliações verdadeiras. Cada nova jornada concluída poderá ser compartilhada aqui.",
-    name: "Paciente",
-    role: "Depoimento em breve",
-  },
-  {
-    quote:
-      "Aqui será compartilhada a percepção de quem confiou no processo — palavras que traduzem o cuidado recebido em cada consulta.",
-    name: "Paciente",
-    role: "Depoimento em breve",
+      "Além de ser um excelente profissional, Ronaldo Leão é muito empático, escuta com atenção e explica tudo de forma clara e didática, fazendo com que a gente realmente entenda o processo. O acompanhamento é acolhedor, sem julgamentos, e isso faz toda a diferença para manter a motivação e alcançar os resultados. Recomendo de olhos fechados!",
+    name: "Paciente acompanhada",
+    role: "Acompanhamento personalizado",
+    image: TESTIMONIAL_RUNNER_PINK,
+    imageAlt: "Paciente sorrindo durante corrida de rua",
   },
 ];
 
@@ -55,27 +57,43 @@ export function Testimonials() {
       <Reveal>
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
-            {placeholders.map((t, i) => (
-              <div key={i} className="min-w-0 flex-[0_0_100%] px-4 md:flex-[0_0_75%] lg:flex-[0_0_60%]">
-                <figure className="relative mx-auto rounded-[2px] border border-border/70 bg-background px-8 py-14 text-center md:px-14 md:py-16">
+            {testimonials.map((testimonial, i) => (
+              <div
+                key={testimonial.image}
+                className="min-w-0 flex-[0_0_100%] px-2 sm:px-4 md:flex-[0_0_88%] lg:flex-[0_0_78%]"
+              >
+                <figure className="relative mx-auto grid overflow-hidden rounded-[2px] border border-border/70 bg-background text-left md:grid-cols-[0.78fr_1.22fr]">
                   <span
                     aria-hidden
-                    className="absolute left-8 top-6 font-serif text-6xl leading-none text-[color:var(--gold)]/40 md:text-7xl"
+                    className="absolute left-5 top-4 z-10 font-serif text-6xl leading-none text-[color:var(--gold)]/35 md:left-[calc(39%+2rem)] md:top-8 md:text-7xl"
                   >
                     “
                   </span>
-                  <blockquote className="font-serif text-[22px] italic leading-relaxed text-foreground md:text-[26px]">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-8 flex flex-col items-center gap-2">
-                    <span className="h-9 w-9 rounded-full border border-border bg-[oklch(0.94_0.012_95)]" />
-                    <span className="font-serif text-[15px] text-foreground">
-                      {t.name}
-                    </span>
-                    <span className="text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
-                      {t.role}
-                    </span>
-                  </figcaption>
+
+                  <div className="relative min-h-[320px] overflow-hidden bg-[oklch(0.94_0.012_95)] md:min-h-[560px]">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.imageAlt}
+                      className="h-full w-full object-cover object-center"
+                      loading={i === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                    <div className="pointer-events-none absolute inset-4 border border-[color:var(--gold)]/30" />
+                  </div>
+
+                  <div className="relative flex flex-col justify-center px-7 py-12 sm:px-9 md:px-12 md:py-16">
+                    <blockquote className="font-serif text-[18px] italic leading-relaxed text-foreground sm:text-[20px] lg:text-[22px]">
+                      {testimonial.quote}
+                    </blockquote>
+                    <figcaption className="mt-8 border-t border-border/70 pt-6">
+                      <span className="block font-serif text-[16px] text-foreground">
+                        {testimonial.name}
+                      </span>
+                      <span className="mt-2 block text-[11px] uppercase tracking-[0.28em] text-muted-foreground">
+                        {testimonial.role}
+                      </span>
+                    </figcaption>
+                  </div>
                 </figure>
               </div>
             ))}
@@ -83,7 +101,7 @@ export function Testimonials() {
         </div>
 
         <div className="mt-10 flex justify-center gap-2">
-          {placeholders.map((_, i) => (
+          {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => emblaApi?.scrollTo(i)}
