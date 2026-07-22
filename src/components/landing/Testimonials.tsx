@@ -13,6 +13,7 @@ const testimonials = [
     name: "Paciente em acompanhamento",
     role: "Ganho de massa magra",
     image: TESTIMONIAL_RUNNER_BEACH,
+    imagePosition: "50% 48%",
     imageAlt: "Paciente correndo ao ar livre após acompanhamento nutricional",
   },
   {
@@ -21,6 +22,7 @@ const testimonials = [
     name: "Paciente acompanhada",
     role: "Acompanhamento personalizado",
     image: TESTIMONIAL_RUNNER_PINK,
+    imagePosition: "52% 34%",
     imageAlt: "Paciente sorrindo durante corrida de rua",
   },
 ];
@@ -62,23 +64,26 @@ export function Testimonials() {
                 key={testimonial.image}
                 className="min-w-0 flex-[0_0_100%] px-2 sm:px-4 md:flex-[0_0_88%] lg:flex-[0_0_78%]"
               >
-                <figure className="relative mx-auto grid overflow-hidden rounded-[2px] border border-border/70 bg-background text-left md:grid-cols-[0.78fr_1.22fr]">
+                <figure className="relative mx-auto grid overflow-hidden rounded-[2px] border border-border/70 bg-background text-left md:grid-cols-[0.62fr_1.38fr]">
                   <span
                     aria-hidden
-                    className="absolute left-5 top-4 z-10 font-serif text-6xl leading-none text-[color:var(--gold)]/35 md:left-[calc(39%+2rem)] md:top-8 md:text-7xl"
+                    className="absolute left-5 top-4 z-10 font-serif text-6xl leading-none text-[color:var(--gold)]/35 md:left-[calc(31%+2rem)] md:top-8 md:text-7xl"
                   >
                     “
                   </span>
 
-                  <div className="relative min-h-[320px] overflow-hidden bg-[oklch(0.94_0.012_95)] md:min-h-[560px]">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.imageAlt}
-                      className="h-full w-full object-cover object-center"
-                      loading={i === 0 ? "eager" : "lazy"}
-                      decoding="async"
-                    />
-                    <div className="pointer-events-none absolute inset-4 border border-[color:var(--gold)]/30" />
+                  <div className="relative flex items-center justify-center bg-[oklch(0.955_0.012_95)] px-7 py-10 md:px-10 md:py-16">
+                    <div className="relative h-48 w-48 overflow-hidden rounded-full border border-[color:var(--gold)]/45 bg-background p-1 shadow-[0_28px_70px_-45px_rgba(0,0,0,0.45)] sm:h-56 sm:w-56 lg:h-72 lg:w-72">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.imageAlt}
+                        className="h-full w-full rounded-full object-cover"
+                        style={{ objectPosition: testimonial.imagePosition }}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                      <div className="pointer-events-none absolute inset-3 rounded-full border border-[color:var(--gold)]/25" />
+                    </div>
                   </div>
 
                   <div className="relative flex flex-col justify-center px-7 py-12 sm:px-9 md:px-12 md:py-16">
