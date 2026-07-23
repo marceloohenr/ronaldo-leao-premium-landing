@@ -77,6 +77,8 @@ const testimonials = [
   },
 ];
 
+const AUTOPLAY_DELAY = 7000;
+
 export function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
   const [selected, setSelected] = useState(0);
@@ -90,7 +92,21 @@ export function Testimonials() {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi, onSelect]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const interval = window.setInterval(() => {
+      emblaApi.scrollNext();
+    }, AUTOPLAY_DELAY);
+
+    return () => window.clearInterval(interval);
+  }, [emblaApi]);
 
   return (
     <section className="mx-auto max-w-[1240px] px-5 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-36">
