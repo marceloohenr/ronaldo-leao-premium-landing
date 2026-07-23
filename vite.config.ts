@@ -5,12 +5,14 @@ import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
+const nitroPreset = process.env.NITRO_PRESET ?? "node-server";
+
 export default defineConfig({
   plugins: [
     tanstackStart({
       server: { entry: "server" },
     }),
-    nitro({ preset: "vercel" }),
+    nitro({ preset: nitroPreset }),
     viteReact(),
     tailwindcss(),
     tsConfigPaths(),

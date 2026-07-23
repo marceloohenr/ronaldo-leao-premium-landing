@@ -1,4 +1,5 @@
-export const SITE_URL = "https://ronaldoleao-nutri.vercel.app";
+export const SITE_URL =
+  import.meta.env.VITE_SITE_URL ?? "https://ronaldoleaonutri.online";
 export const SITE_TITLE = "Ronaldo Leão – Nutrição e Bem-estar";
 export const SITE_DESCRIPTION =
   "Acompanhamento nutricional premium, personalizado e humanizado.";
