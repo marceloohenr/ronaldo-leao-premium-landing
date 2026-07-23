@@ -2,10 +2,31 @@ import {
   RONALDO_LOGO,
   RONALDO_PORTRAIT_ARMS,
   RONALDO_PORTRAIT_CLOSE,
+  TESTIMONIAL_PLAN_CRITERIOSO,
+  TESTIMONIAL_PROJECT_VERAO,
+  TESTIMONIAL_REEDUCACAO_LEVE,
 } from "@/lib/assets";
 import { BRAND_NAME } from "@/lib/constants";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Reveal } from "./motion-primitives";
+
+const heroPatientImages = [
+  {
+    src: TESTIMONIAL_PROJECT_VERAO,
+    alt: "Paciente acompanhado por Ronaldo Leão",
+    position: "50% 38%",
+  },
+  {
+    src: TESTIMONIAL_PLAN_CRITERIOSO,
+    alt: "Paciente acompanhada por Ronaldo Leão",
+    position: "50% 42%",
+  },
+  {
+    src: TESTIMONIAL_REEDUCACAO_LEVE,
+    alt: "Paciente em reeducação alimentar",
+    position: "58% 38%",
+  },
+];
 
 export function Hero() {
   return (
@@ -48,11 +69,20 @@ export function Hero() {
           <Reveal delay={0.35}>
             <div className="mt-12 flex items-center gap-4 text-[12px] text-muted-foreground">
               <div className="flex -space-x-2">
-                {[0, 1, 2].map((i) => (
+                {heroPatientImages.map((image) => (
                   <span
-                    key={i}
-                    className="h-6 w-6 rounded-full border border-background bg-[color:var(--gold)]/30"
-                  />
+                    key={image.src}
+                    className="relative h-7 w-7 overflow-hidden rounded-full border border-background bg-[color:var(--gold)]/20 shadow-[0_10px_22px_-16px_rgba(0,0,0,0.45)] ring-1 ring-[color:var(--gold)]/35"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: image.position }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
                 ))}
               </div>
               <span className="tracking-wide">
