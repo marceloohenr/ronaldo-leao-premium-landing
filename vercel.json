@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "https://ronaldoleaonutri.online/$1",
+      "source": "/:path*",
+      "destination": "https://ronaldoleaonutri.online/:path*",
       "permanent": true
     }
   ]
