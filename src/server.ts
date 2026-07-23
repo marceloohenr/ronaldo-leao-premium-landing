@@ -7,6 +7,10 @@ type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
 
+const LEGACY_VERCEL_HOST = "ronaldoleao-nutri.vercel.app";
+const CANONICAL_HOST = "ronaldoleaonutri.online";
+const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
+
 let serverEntryPromise: Promise<ServerEntry> | undefined;
 
 async function getServerEntry(): Promise<ServerEntry> {
@@ -48,6 +52,10 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const url = new URL(request.url);
+      if (url.hostname === LEGACY_VERCEL_HOST) {
+        return Response.redirect(`${CANONICAL_ORIGIN}${url.pathname}${url.search}`, 308);
+      }
+
       if (url.pathname === "/health") {
         return Response.json({
           ok: true,
