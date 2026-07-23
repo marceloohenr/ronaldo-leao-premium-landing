@@ -1,5 +1,9 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build",
-  "installCommand": "npm install"
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://ronaldoleaonutri.online/$1",
+      "permanent": true
+    }
+  ]
 }
