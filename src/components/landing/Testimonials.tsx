@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
+  TESTIMONIAL_CELERIDADE,
+  TESTIMONIAL_MUDANCA_HABITOS,
+  TESTIMONIAL_PLAN_CRITERIOSO,
+  TESTIMONIAL_PROJECT_VERAO,
+  TESTIMONIAL_REEDUCACAO_LEVE,
   TESTIMONIAL_RUNNER_BEACH,
   TESTIMONIAL_RUNNER_PINK,
 } from "@/lib/assets";
@@ -24,6 +29,51 @@ const testimonials = [
     image: TESTIMONIAL_RUNNER_PINK,
     imagePosition: "52% 34%",
     imageAlt: "Paciente sorrindo durante corrida de rua",
+  },
+  {
+    quote:
+      "Participar do Projeto Verão com o Ronaldo foi, sem dúvidas, uma virada de chave. Eu sempre levei meus treinos de musculação a sério, mas foi o acompanhamento nutricional dele que me fez atingir outro patamar. Ele entendeu exatamente a minha correria de faculdade, treino e dieta, entregando um planejamento sem terrorismo e prático para o dia a dia. Essa alimentação alinhada foi o combustível que eu precisava para aguentar a intensidade da musculação, trazendo resultados reais na disposição e no espelho.",
+    name: "Paciente do Projeto Verão",
+    role: "Musculação e rotina de estudos",
+    image: TESTIMONIAL_PROJECT_VERAO,
+    imagePosition: "50% 38%",
+    imageAlt: "Paciente do Projeto Verão em retrato",
+  },
+  {
+    quote:
+      "O plano alimentar foi elaborado de forma criteriosa e totalmente adequado às minhas necessidades, rotina e objetivos, mostrando um cuidado individualizado que fez toda a diferença.",
+    name: "Paciente acompanhada",
+    role: "Plano alimentar individualizado",
+    image: TESTIMONIAL_PLAN_CRITERIOSO,
+    imagePosition: "50% 42%",
+    imageAlt: "Paciente em área externa próxima à praia",
+  },
+  {
+    quote:
+      "Gostei muito do acompanhamento de Ronaldo Leão. Desde o começo ele foi super atencioso, montou um plano alimentar que realmente fez sentido para a minha rotina. Com a ajuda dele consegui fazer uma reeducação alimentar de um jeito mais leve, sem sofrimento, e isso melhorou muito meu bem-estar e a forma como me sinto no dia a dia. Só tenho a agradecer pelo cuidado e pela dedicação. Recomendo de olhos fechados!",
+    name: "Paciente acompanhada",
+    role: "Reeducação alimentar leve",
+    image: TESTIMONIAL_REEDUCACAO_LEVE,
+    imagePosition: "58% 38%",
+    imageAlt: "Paciente sorrindo em retrato",
+  },
+  {
+    quote:
+      "Minha experiência com o nutricionista Ronaldo Leão foi excelente. Desde a primeira consulta, fui atendido com muita atenção e de forma totalmente personalizada, levando em consideração minhas necessidades e objetivos. Um dos grandes diferenciais foi a celeridade na elaboração do plano alimentar e das recomendações, o que me permitiu iniciar as mudanças imediatamente. O atendimento humanizado, a disponibilidade para esclarecer dúvidas e o plano personalizado me transmitiram muita confiança.",
+    name: "Paciente em acompanhamento",
+    role: "Agilidade e plano personalizado",
+    image: TESTIMONIAL_CELERIDADE,
+    imagePosition: "50% 38%",
+    imageAlt: "Paciente em selfie ao ar livre",
+  },
+  {
+    quote:
+      "Quero agradecer por todo o cuidado e atenção durante o atendimento. Você realmente me ouviu, entendeu as minhas dificuldades com a alimentação e conseguiu adaptar o plano alimentar à minha rotina, ao meu planejamento e, principalmente, aos meus gostos. Isso fez toda a diferença, porque eu não senti que estava seguindo uma dieta impossível, mas sim construindo uma reeducação alimentar que faz sentido para a minha realidade.",
+    name: "Paciente em acompanhamento",
+    role: "Mudança de hábitos",
+    image: TESTIMONIAL_MUDANCA_HABITOS,
+    imagePosition: "50% 36%",
+    imageAlt: "Paciente em retrato sorrindo",
   },
 ];
 
@@ -57,7 +107,10 @@ export function Testimonials() {
       </div>
 
       <Reveal>
-        <div className="cursor-grab overflow-hidden active:cursor-grabbing" ref={emblaRef}>
+        <div
+          className="cursor-grab overflow-hidden active:cursor-grabbing"
+          ref={emblaRef}
+        >
           <div className="flex items-stretch">
             {testimonials.map((testimonial, i) => (
               <div

@@ -4,3 +4,11 @@ export const RONALDO_PORTRAIT_ARMS = "/ronaldo/ronaldo-portrait-arms.jpeg";
 export const RONALDO_ABOUT_OFFICE = "/ronaldo/ronaldo-about-office.jpeg";
 export const TESTIMONIAL_RUNNER_BEACH = "/ronaldo/testimonial-runner-beach.jpg";
 export const TESTIMONIAL_RUNNER_PINK = "/ronaldo/testimonial-runner-pink.jpeg";
+export const TESTIMONIAL_PROJECT_VERAO = "/ronaldo/testimonial-project-verao.jpeg";
+export const TESTIMONIAL_PLAN_CRITERIOSO =
+  "/ronaldo/testimonial-plan-criterioso.jpeg";
+export const TESTIMONIAL_REEDUCACAO_LEVE =
+  "/ronaldo/testimonial-reeducacao-leve.jpeg";
+export const TESTIMONIAL_CELERIDADE = "/ronaldo/testimonial-celeridade.jpeg";
+export const TESTIMONIAL_MUDANCA_HABITOS =
+  "/ronaldo/testimonial-mudanca-habitos.jpeg";
