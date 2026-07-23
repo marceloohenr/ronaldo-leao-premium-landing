@@ -1,6 +1,7 @@
 import {
   GALLERY_ASSESSMENT,
   GALLERY_CONSULTORIO,
+  GALLERY_PLANNER_NOTEBOOK,
   GALLERY_SITE_PREVIEW,
 } from "@/lib/assets";
 import { Reveal } from "./motion-primitives";
@@ -25,9 +26,9 @@ const galleryItems = [
     position: "50% 48%",
   },
   {
-    title: "Próximo momento em breve",
-    image: null,
-    alt: "",
+    title: "Organização e cuidado em cada plano",
+    image: GALLERY_PLANNER_NOTEBOOK,
+    alt: "Caderno de Ronaldo Leão com notebook no consultório",
     position: "50% 50%",
   },
 ];

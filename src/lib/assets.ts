@@ -15,3 +15,4 @@ export const TESTIMONIAL_MUDANCA_HABITOS =
 export const GALLERY_SITE_PREVIEW = "/ronaldo/gallery-site-preview.jpeg";
 export const GALLERY_ASSESSMENT = "/ronaldo/gallery-assessment.jpeg";
 export const GALLERY_CONSULTORIO = "/ronaldo/gallery-consultorio.jpeg";
+export const GALLERY_PLANNER_NOTEBOOK = "/ronaldo/gallery-planner-notebook.jpeg";
