@@ -12,3 +12,6 @@ export const TESTIMONIAL_REEDUCACAO_LEVE =
 export const TESTIMONIAL_CELERIDADE = "/ronaldo/testimonial-celeridade.jpeg";
 export const TESTIMONIAL_MUDANCA_HABITOS =
   "/ronaldo/testimonial-mudanca-habitos.jpeg";
+export const GALLERY_SITE_PREVIEW = "/ronaldo/gallery-site-preview.jpeg";
+export const GALLERY_ASSESSMENT = "/ronaldo/gallery-assessment.jpeg";
+export const GALLERY_CONSULTORIO = "/ronaldo/gallery-consultorio.jpeg";
