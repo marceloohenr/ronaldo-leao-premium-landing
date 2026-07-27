@@ -164,3 +164,21 @@
 @utility text-balance {
   text-wrap: balance;
 }
+
+@keyframes developer-glow {
+  0%, 100% {
+    filter: saturate(0.9) brightness(0.96);
+    box-shadow: 0 0 14px rgba(96, 78, 255, 0.22);
+  }
+
+  50% {
+    filter: saturate(1.18) brightness(1.08);
+    box-shadow: 0 0 22px rgba(34, 204, 170, 0.38);
+  }
+}
+
+@keyframes developer-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

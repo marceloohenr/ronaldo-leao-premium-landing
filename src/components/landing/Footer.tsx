@@ -108,11 +108,19 @@ export function Footer() {
               href={DEVELOPER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Site do desenvolvedor"
-              className="inline-flex h-10 w-full max-w-[210px] items-center justify-center gap-2 rounded-full border border-primary/15 bg-background/70 px-4 text-[11px] font-semibold text-primary shadow-[0_14px_30px_-28px_rgba(0,0,0,0.55)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/[0.05] hover:shadow-[0_18px_36px_-30px_rgba(0,0,0,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] sm:w-auto"
+              aria-label="Visitar o site do desenvolvedor"
+              className="group inline-flex min-h-12 w-full max-w-[230px] items-center justify-center gap-2.5 rounded-full border border-primary/15 bg-background/70 py-1.5 pl-4 pr-1.5 text-[12px] font-medium text-foreground shadow-[0_14px_30px_-28px_rgba(0,0,0,0.55)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/[0.05] hover:shadow-[0_18px_36px_-30px_rgba(0,0,0,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold)] sm:w-auto"
             >
-              <Code2 size={14} strokeWidth={1.7} />
-              <span>{"</Desenvolvedor/>"}</span>
+              <Code2 size={16} strokeWidth={1.7} className="text-primary" />
+              <span>Desenvolvido por</span>
+              <span className="relative grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[conic-gradient(from_210deg,#ff7a59,#ffd34e,#38d996,#1e8cff,#7c3aed,#ff4fc3,#ff7a59)] p-[2px] shadow-[0_0_18px_rgba(70,130,180,0.32)] transition-transform duration-300 group-hover:scale-105 motion-safe:animate-[developer-glow_4s_ease-in-out_infinite]">
+                <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_30deg,transparent_10%,rgba(255,255,255,0.82)_28%,transparent_46%)] opacity-70 motion-safe:animate-[developer-spin_6s_linear_infinite]" />
+                <img
+                  src="/ronaldo/developer-marcelo.png"
+                  alt=""
+                  className="relative h-full w-full rounded-full border border-background object-cover"
+                />
+              </span>
             </a>
           </div>
         </div>
