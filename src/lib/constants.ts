@@ -6,8 +6,8 @@ export const SITE_DESCRIPTION =
 export const SITE_IMAGE = `${SITE_URL}/ronaldo/whatsapp-preview-v3.png`;
 
 export const WHATSAPP_URL =
-  "https://wa.me/5581988244393?text=Ol%C3%A1%20Ronaldo!%20Gostaria%20de%20agendar%20uma%20consulta.";
-export const WHATSAPP_DISPLAY = "81 98824-4393";
+  "https://wa.me/558195946630?text=Ol%C3%A1%20Ronaldo!%20Gostaria%20de%20agendar%20uma%20consulta.";
+export const WHATSAPP_DISPLAY = "81 9594-6630";
 export const INSTAGRAM_URL = "https://instagram.com/ronaldoleao.nut";
 export const INSTAGRAM_HANDLE = "@ronaldoleao.nut";
 export const BRAND_NAME = "Ronaldo Leão";
